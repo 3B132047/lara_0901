@@ -8,6 +8,7 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">新增文章</li>
     </ol>
+    @if($errors->any())
     <div class="alert alert-danger alert-dismissible" role="alert" id="liveAlert">
         <strong>錯誤！</strong> 請修正以下問題：
         <ul>
@@ -15,6 +16,7 @@
         </ul>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    @endif
     <form action="{{ route('admin.posts.store') }}" method="POST" role="form">
         @method('POST')
         @csrf
