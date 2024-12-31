@@ -32,10 +32,12 @@
                 <td>{{ $post->title }}</td>
                 <td>{{ ($post->is_feature)? 'v' : 'x' }}</td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="{{ route('admin.posts.edit', $post->id) }}">編輯</a>
-
-
-                    <a class="btn btn-primary btn-sm" href="#">刪除</a>
+                    <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">編輯</a>
+                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" style="display:inline-block">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-sm btn-danger" type="submit">刪除</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
