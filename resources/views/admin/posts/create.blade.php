@@ -33,7 +33,7 @@
             </select>
         </div>
         <div class="text-right">
-            <a class="btn btn-primary btn-sm" href="#">儲存</a>
+            <button type="submit" class="btn btn-success">新增</button>
         </div>
     </form>
 </div>
