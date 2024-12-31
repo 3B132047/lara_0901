@@ -33,10 +33,11 @@
                 <div class="row">
                     @foreach($posts->chunk(2) as $chunks)
                     <div class="col-lg-6">
-                        @foreach($chunks as $post)
+                        @foreach($posts as $post)
                         <!-- Blog post-->
                         <div class="card mb-4">
                             <a href="{{ route('posts.show', $post->id) }}">
+                                {{ $post->title }}
                                 <img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..."/>
                             </a>
                             <div class="card-body">

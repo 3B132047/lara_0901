@@ -15,8 +15,7 @@
         </ul>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    <form action="/admin/posts/{{$post->id}}" method="POST" role="form">
-        @method('PATCH')
+    <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" role="form">        @method('PATCH')
         @csrf
         <div class="form-group">
             <label for="title" class="form-label">標題：</label>

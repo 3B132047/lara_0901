@@ -9,19 +9,15 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'DESC')->get();
-
-        $data = [
-            'posts' => $posts,
-        ];
-
-        return view('posts.index', $data);
+        $posts = Post::where('is_feature', true)->get();
+        $data = ['posts' => $posts];
+        return view('admin.posts.index', $data);
     }
 
-    public function show(Post $post)
+    public function show($id)
     {
         $data = [
-            'post' => $post,
+            'id' => $id,
         ];
 
         return view('posts.show', $data);
